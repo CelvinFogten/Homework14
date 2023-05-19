@@ -1,0 +1,79 @@
+@mixin FlexElement($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin mainText($color) {
+  font-size: 32px;
+  font-weight: 600;
+  color: $color;
+}
+@mixin productText($color) {
+  font-size: 24px;
+  font-weight: 600;
+  color: $color;
+}
+@mixin productPrice($color) {
+  font-size: 21px;
+  font-weight: 500;
+  color: $color;
+}
+
+.header {
+  @include FlexElement(center, center);
+  padding-top: 20px;
+  width: 100%;
+  height: 60px;
+  background-color: lightblue;
+}
+.headerText {
+  @include mainText(white);
+}
+.container__product {
+  @include FlexElement(center, center);
+  flex-wrap: wrap;
+}
+.productBlock {
+  margin: 25px auto;
+  margin-left: 50px;
+  padding: 5px;
+  width: 400px;
+  height: 450px;
+  border-style: solid;
+  border-color: cyan;
+  border-width: 5px;
+  border-radius: 10px;
+  transition: 0.5s ease-out;
+}
+.productBlock:hover {
+  transform: scale(1.05);
+  border-color: rgb(109, 230, 125);
+}
+.productName {
+  @include productText(pink);
+  text-align: center;
+}
+.productPrice {
+  @include productPrice(black);
+  text-align: center;
+}
+.productImg {
+  height: 55%;
+  width: 80%;
+  margin: 0 10%;
+}
+.btnBuy {
+  width: 40%;
+  height: 35px;
+  margin: 15px 30%;
+  color: #ffffff;
+  background-color: chocolate;
+  border: none;
+  border-radius: 100px;
+  transition: 0.3s;
+}
+.btnBuy:hover {
+  cursor: pointer;
+  background-color: rgb(144, 192, 116);
+  color: rgb(0, 0, 0);
+}
